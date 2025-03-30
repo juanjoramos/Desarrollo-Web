@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Teleconsulta</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="teleconsulta-css.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+
+<div class="container mt-5">
+    <h2 class="text-center" id="text-center">Formulario de Teleconsulta</h2>
+
+    <ul style="text-align: center; list-style-type: none;">
+        <li>Ximena Zamuido Mesa</li>
+        <li>Juan Jose Ramos Agudelo</li>
+        <li>John Jairo Cañaveral Gutierrez</li>
+      </ul>
+    
+    <form id="teleconsulta-form">
+        <div class="row">
+            
+        <!-- Datos del Paciente -->
+        <div class="col-md-6" id="datosPaciente">
+            <h4>Datos del Paciente</h4>
+            <div class="row mt-2">
+                <div class="col-md-6">
+                    <label for="tipoDocumento" class="form-label">Tipo de Documento:</label>
+                    <select class="form-select" id="tipoDocumento" required>
+                        <option value="">Seleccione...</option>
+                        <option value="cedula">Cédula</option>
+                        <option value="tarjeta">Tarjeta de Identidad</option>
+                        <option value="pasaporte">Pasaporte</option>
+                        <option value="otro">Otro</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label for="numeroDocumento" class="form-label">Número de Documento:</label>
+                    <input type="text" class="form-control" id="numeroDocumento" required>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="nombrePaciente" class="form-label">Nombre:</label>
+                    <input type="text" class="form-control" id="nombrePaciente" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="apellidoPaciente" class="form-label">Apellido:</label>
+                    <input type="text" class="form-control" id="apellidoPaciente" required>
+                </div>
+            </div>
+
+            <div class="row mt-2">
+                <div class="col-md-6">
+                    <label for="edadPaciente" class="form-label">Edad:</label>
+                    <input type="number" class="form-control" id="edadPaciente" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="generoPaciente" class="form-label">Género:</label>
+                    <select class="form-select" id="generoPaciente" required>
+                        <option value="">Seleccione...</option>
+                        <option value="masculino">Masculino</option>
+                        <option value="femenino">Femenino</option>
+                        <option value="otro">Otro</option>
+                    </select>
+                </div>
+            </div>
+
+            <label for="fotoPaciente" class="form-label mt-2">Foto del Paciente:</label>
+            <input type="file" class="form-control" id="fotoPaciente" accept="image/*" required>
+            <div class="img-paciente">
+                <img src="./teleconsulta-foto-paciente-1.jpg" alt="" id="previewPaciente" class="img-preview mt-2">
+            </div>
+        </div>
+
+            <!-- Datos del Doctor -->
+            <div class="col-md-6" id="datosDoctor">
+                <h4>Datos del Doctor</h4>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="nombrePaciente" class="form-label">Nombre:</label>
+                        <input type="text" class="form-control" id="nombrePaciente" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="apellidoPaciente" class="form-label">Apellido:</label>
+                        <input type="text" class="form-control" id="apellidoPaciente" required>
+                    </div>
+                </div>
+
+                <div class="row mt-2">
+                    <div class="col-md-6">
+                        <label for="edadPaciente" class="form-label">Edad:</label>
+                        <input type="number" class="form-control" id="edadPaciente" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="generoPaciente" class="form-label">Género:</label>
+                        <select class="form-select" id="generoPaciente" required>
+                            <option value="">Seleccione...</option>
+                            <option value="masculino">Masculino</option>
+                            <option value="femenino">Femenino</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <label for="especialidad" class="form-label mt-2">Especialidad:</label>
+                <select class="form-select" id="especialidad" required>
+                    <option value="">Seleccione...</option>
+                    <option value="cardiologia">Cardiología</option>
+                    <option value="pedriatria">Pediatría</option>
+                    <option value="dermatologia">Dermatología</option>
+                    <option value="psicologia">Psicología</option>
+                    <option value="oftalmologia">Oftalmología</option>
+                    <option value="otro">Otro</option>
+                </select>
+
+                <label for="fotoDoctor" class="form-label mt-2">Foto del Doctor:</label>
+                <input type="file" class="form-control" id="fotoDoctor" accept="image/*" required>
+                <img src="./teleconsulta-foto-doctora-1.jpg"  id="previewDoctor" class="img-preview mt-2" alt="">
+            </div>
+        </div>
+        </div>
+
+        <!-- Ubicación -->
+         <!-- Colocar aquí la etiquete para incluir el mapa de Google Maps -->
+        <div class="mt-4">
+            <h4 class="titulo-ubicacion" id="ubicacion">Ubicación del paciente</h4>
+            <div id="map">
+                <div class="img-maps">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1145.5113578478497!2d-75.58811543509708!3d6.273222041173791!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e44290074c82ebb%3A0x503e25d058b3d4de!2sPascual%20Bravo%20-%20Porteria%20peatonal!5e0!3m2!1ses!2sco!4v1741361662836!5m2!1ses!2sco" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+
+        <!-- Diagnóstico -->
+        <div class="mt-4" id="datosDiagnostico">
+            <div class="datosdiagnosticos-container">
+                <div class="datosdiagnosticos-content">
+                    <h4>Diagnóstico</h4>
+                    <label for="sintomas" class="form-label">Síntomas:</label>
+                    <textarea class="form-control" id="sintomas" rows="3"></textarea>
+        
+                    <label for="diagnostico" class="form-label mt-2">Diagnóstico:</label>
+                    <textarea class="form-control" id="diagnostico" rows="3"></textarea>
+        
+                    <!-- Diagnóstico - Audio -->
+                    <div class="mt-3" id="audio">
+                        <audio src="./teleconsulta-diagnostico-1.mp3" id="audioPlayback" controls class="mt-3"></audio>
+                    </div>
+                </div>
+                        <!-- Botón de Envío -->
+                <button type="submit" class="btn btn-success mt-4 w-100" id="miBoton">Enviar Teleconsulta</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>

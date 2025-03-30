@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    font-family: "Poppins", serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f8f9fa;
+    margin: 100px 0px 50px;
+}
+
+nav {
+    display: none;
+}
+
+/*HEADER*/
+header {
+    background-color: #f1f0f0;
+    font-size: 20px;
+    box-shadow: 0 5px 8px rgba(4, 4, 4, .188);
+    position: fixed;
+    width: 100%;
+    z-index: 50;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 70px;
+}
+
+.menu-horizontal {
+    color: #81b0f7;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    align-items: center; /* Asegura que los elementos de la lista estén alineados verticalmente */
+    text-align: center; /* Centra el texto dentro de cada <li> */
+}
+
+.menu-horizontal > li {
+    display: inline-block; /* Esto asegura que los elementos <li> estén en línea */
+}
+
+.menu-horizontal > li > a {
+    display: block;
+    padding: 15px 20px;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+.menu-horizontal > li:hover {
+    background-color: #84bfe759;
+}
+
+.menu-vertical {
+    position: absolute;
+    display: none;
+    list-style: none;
+    width: 200px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.menu-horizontal li:hover .menu-vertical {
+    display: block;
+}
+
+.menu-vertical li:hover {
+    background-color: #84bfe759;
+}
+
+.menu-vertical li a {
+    display: block;
+    color: #000;
+    text-decoration: none;
+    padding: 15px 15px 15px 20px;
+}
+
+h2, h4 {
+    text-align: center;
+}
+
+/* Id del objeto en página HTML */
+.img-preview {
+    width: 100%;
+    max-height: 500px;
+    object-fit: contain;
+    display: block;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+}
+
+#map {
+    width: 80%;
+    margin: 0 auto;
+    background-color: #ddd;
+    border-radius: 10px;
+}
+
+.img-maps {
+    width: 100%;
+}
+
+.img-maps iframe {
+    width: 100%;
+}
+
+/* Modificacion color de la división donde se encuentra el paciente */
+/* Estilo para la sección de datos del paciente */
+#datosPaciente {
+    background-color: rgba(147, 238, 253, 0.537);
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    border-radius: 5px;
+}
+
+#datosDoctor {
+    background-color: rgba(156, 180, 184, 0.537);
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    border-radius: 5px;
+}
+
+#datosDiagnostico h4 {
+    padding: 20px 0px;
+    margin: 20px 0px;
+    line-height: 1;
+    font-weight: 400;
+    color: #000000;
+    font-size: 35px;
+    letter-spacing: 0;
+    text-shadow: -3px -3px 3px #FFFFFF, 3px -3px 3px #FFFFFF, -3px 3px 3px #FFFFFF, 3px 3px 3px #FFFFFF;
+}
+
+.titulo-ubicacion, .text-center {
+    padding: 20px 0px;
+    margin: 20px 0px;
+    line-height: 1;
+    font-weight: 400;
+    color: #000000;
+    font-size: 35px;
+    letter-spacing: 0;
+    text-shadow: -3px -3px 3px #FFFFFF, 3px -3px 3px #FFFFFF, -3px 3px 3px #FFFFFF, 3px 3px 3px #FFFFFF;
+}
+
+
+/*DATOS DIAGNOSTICOS*/
+.datosdiagnosticos-container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+#datosDiagnostico {
+    background: #81b0f7;
+}
+
+#miBoton {
+    background-color: #000;
+    border: 0px;
+    color: #fff;
+    width: 400px;
+}
+
+/* Modificacion color de la división donde se encuentra el doctor */
+
+
+/* Modificacion color de la división donde se encuentra el diagnóstico */
