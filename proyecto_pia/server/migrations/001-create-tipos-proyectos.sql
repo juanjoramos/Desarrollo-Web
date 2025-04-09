@@ -1,0 +1,7 @@
+CREATE TABLE tipo_proyecto (
+    id SMALLSERIAL PRIMARY KEY,
+    codigo VARCHAR(8) UNIQUE NOT NULL,
+    descripcion VARCHAR(255) NOT NULL,
+    abreviatura VARCHAR(6) NOT NULL,
+    fecha_registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
