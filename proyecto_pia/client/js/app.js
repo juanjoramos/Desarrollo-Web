@@ -116,3 +116,31 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  window.addEventListener("scroll", function () {
+    let navbar = document.querySelector(".navbar");
+    if (window.scrollY > 50) {
+        navbar.classList.add("shrink");
+    } else {
+        navbar.classList.remove("shrink");
+    }
+});
+
+$(document).ready(function () {
+  // Cerrar el menú hamburguesa después de hacer clic en cualquier enlace
+  $('.navbar-nav .nav-link').on('click', function () {
+      // Solo cerrar el menú si está abierto
+      if ($('.navbar-toggler').attr('aria-expanded') === 'true') {
+          $('.navbar-toggler').click();
+      }
+  });
+});
+
+window.addEventListener("DOMContentLoaded", () => {
+    const navbar = document.querySelector(".navbar");
+    const formContainer = document.querySelector("#form-container");
+    const navbarHeight = navbar.offsetHeight;
+
+    formContainer.style.paddingTop = `${navbarHeight + 20}px`; // +20 para dejar margen
+});
+
