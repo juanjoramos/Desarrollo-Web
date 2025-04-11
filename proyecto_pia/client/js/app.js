@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function showResponse(statusCode, message) {
     statusCodeElement.textContent = statusCode;
 
+
     // Colores según el código de estado
     if (statusCode >= 200 && statusCode < 300) {
       statusCodeElement.style.color = 'green';
@@ -28,12 +29,48 @@ document.addEventListener('DOMContentLoaded', () => {
       : message;
   }
 
+
+  function renderLista(data) {
+    const container = document.getElementById('lista-proyectos');
+    if (!data.length) {
+      container.innerHTML = '<p>No hay proyectos disponibles.</p>';
+      return;
+    }
+
+    const table = `
+      <table class="table table-striped text-white">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Código</th>
+            <th>Descripción</th>
+            <th>Abreviatura</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${data.map(p => `
+            <tr>
+              <td>${p.id}</td>
+              <td>${p.codigo}</td>
+              <td>${p.descripcion}</td>
+              <td>${p.abreviatura}</td>
+            </tr>
+          `).join('')}
+        </tbody>
+      </table>
+    `;
+
+    container.innerHTML = table;
+  }
+
   // Listar tipo de proyectos (GET)
   btnListar.addEventListener('click', async () => {
     try {
+      responseMessageElement.textContent = '⏳ Cargando...';
       const response = await fetch(baseUrl);
       const data = await response.json();
       showResponse(response.status, data);
+      renderLista(data);
       if (response.ok) {
         proyectoForm.reset();
       }
@@ -58,6 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     try {
+      responseMessageElement.textContent = '⏳ Cargando...';
       const response = await fetch(baseUrl, {
         method: 'POST',
         headers: {
@@ -98,6 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     try {
+      responseMessageElement.textContent = '⏳ Cargando...';
       const response = await fetch(`${baseUrl}/${id}`, {
         method: 'PUT',
         headers: {
@@ -127,6 +166,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!confirm('¿Está seguro de eliminar este tipo de proyecto?')) return;
 
     try {
+      responseMessageElement.textContent = '⏳ Cargando...';
       const response = await fetch(`${baseUrl}/${id}`, {
         method: 'DELETE'
       });

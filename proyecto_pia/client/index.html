@@ -1,51 +1,56 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Control de Proyectos</title>
-    <!-- icono pestaña -->
-    <link rel="icon" href="./img/icono.png" type="image/x-icon">
-    <!-- Bootstrap CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- CSS -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="css/style.css">
+  <!-- icono pestaña -->
+  <link rel="icon" href="./img/icono.png" type="image/x-icon">
+  <!-- Bootstrap CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- CSS -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
   <nav class="navbar navbar-expand-lg navbar-light bg-light py-1 fixed-top">
     <div class="container-fluid">
-        <div class="d-flex align-items-center">
-            <img src="img/logo-iupb.png" alt="Logo 1" class="logo me-3">
-        </div>
-        <!-- Botón hamburguesa (cambio en los atributos data-bs-toggle y data-bs-target) -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <!-- Menú colapsable -->
-        <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item active">
-                    <a class="nav-link fs-4 mx-3" href="./index.html">Inicio <span class="sr-only"></span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link fs-4 mx-3" href="#footer">Contacto</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link fs-4 mx-3" href="#form-container">Datos Proyecto</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link fs-4 mx-3" href="#response-container">Respuesta Servidor</a>
-                </li>
-            </ul>
-        </div>
+      <div class="d-flex align-items-center">
+        <img src="img/logo-iupb.png" alt="Logo 1" class="logo me-3">
+      </div>
+      <!-- Botón hamburguesa (cambio en los atributos data-bs-toggle y data-bs-target) -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- Menú colapsable -->
+      <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item active">
+            <a class="nav-link fs-4 mx-3" href="./index.html">Inicio <span class="sr-only"></span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fs-4 mx-3" href="#footer">Contacto</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fs-4 mx-3" href="#form-container">Datos Proyecto</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fs-4 mx-3" href="#response-container">Respuesta Servidor</a>
+          </li>
+        </ul>
+      </div>
     </div>
-</nav> 
+  </nav>
 
   <div class="container">
-    <div class="panel">      
+    <div class="panel">
       <div class="form-container" id="form-container">
         <h2>Datos del Proyecto</h2>
         <form id="proyecto-form">
@@ -67,7 +72,7 @@
           </div>
         </form>
       </div>
-      
+
       <div class="controls">
         <button id="btn-listar">Listar Proyectos (GET)</button>
         <button id="btn-crear">Crear Proyecto (POST)</button>
@@ -87,52 +92,67 @@
     </div>
   </div>
 
+  <div id="lista-proyectos"></div>
+
   <footer class="bg-dark text-white pt-5 pb-4" id="footer">
     <div class="container text-center text-md-left">
       <div class="row text-center text-md-left">
         <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mt-4">
           <h5 class="text-uppercase mb-4 font-weight-bold text-white">Contacto</h5>
           <ul class="list-unstyled">
-            <li>John Cañaveral: <a href="mailto:john.canaveral921@pascualbravo.edu.co">john.canaveral921@pascualbravo.edu.co</a></li>
-            <li>Juan Jose Ramos: <a href="mailto:juan.ramos586@pascualbravo.edu.co">juan.ramos586@pascualbravo.edu.co</a></li>
-            <li>Ximena Zamudio: <a href="mailto:ximena.zamudio523@pascualbravo.edu.co">ximena.zamudio523@pascualbravo.edu.co</a></li>
+            <li>John Cañaveral: <a
+                href="mailto:john.canaveral921@pascualbravo.edu.co">john.canaveral921@pascualbravo.edu.co</a></li>
+            <li>Juan Jose Ramos: <a
+                href="mailto:juan.ramos586@pascualbravo.edu.co">juan.ramos586@pascualbravo.edu.co</a></li>
+            <li>Ximena Zamudio: <a
+                href="mailto:ximena.zamudio523@pascualbravo.edu.co">ximena.zamudio523@pascualbravo.edu.co</a></li>
+            <li>Estiven Toro Henao: <a
+                href="mailto:estiven.toro046@pascualbravo.edu.co">estiven.toro046@pascualbravo.edu.co</a></li>
           </ul>
         </div>
-  
+
         <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mt-3">
           <h5 class="text-uppercase mb-4 font-weight-bold text-white">Telefonos</h5>
           <ul class="list-unstyled">
             <li>Jonh Cañaveral: +57 300 532 44 11</li>
             <li>Juan Jose Ramos: +57 312 778 80 47</li>
             <li>Ximena Zamudio: +57 301 376 61 59</li>
+            <li>Estiven Toro Henao: +57 319 509 63 11</li>
           </ul>
         </div>
-  
+
         <div class="col-md-4 col-lg-4 col-xl-2 mx-auto mt-3">
           <h5 class="text-uppercase mb-4 font-weight-bold text-white">GitHub</h5>
           <ul class="list-unstyled">
-            <li><a href="https://github.com/jairocanaveral23" target="_blank" rel="noopener noreferrer">John Cañaveral</a></li>
-            <li><a href="https://github.com/juanjoramos" target="_blank" rel="noopener noreferrer">Juan Jose Ramos</a></li>
-            <li><a href="https://github.com/ximena-2301" target="_blank" rel="noopener noreferrer">Ximena Zamudio Mesa</a></li>
+            <li><a href="https://github.com/jairocanaveral23" target="_blank" rel="noopener noreferrer">John
+                Cañaveral</a></li>
+            <li><a href="https://github.com/juanjoramos" target="_blank" rel="noopener noreferrer">Juan Jose Ramos</a>
+            </li>
+            <li><a href="https://github.com/ximena-2301" target="_blank" rel="noopener noreferrer">Ximena Zamudio
+                Mesa</a></li>
+            <li><a href="https://github.com/torotzl" target="_blank" rel="noopener noreferrer">Estiven Toro Henao</a>
+            </li>
           </ul>
         </div>
       </div>
       <hr class="mb-4">
       <div class="row align-items-center">
         <div class="col-md-7 col-lg-8">
-          <p> Copyright ©2020 All rights reserved by: 
+          <p> Copyright ©2020 All rights reserved by:
             <a href="#" style="text-decoration: none;">
               <strong>The Providers</strong>
-            </a></p>
+            </a>
+          </p>
         </div>
       </div>
     </div>
   </footer>
-  
 
-<!-- Bootstrap JS y Popper -->
+
+  <!-- Bootstrap JS y Popper -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/app.js"></script>
 </body>
+
 </html>

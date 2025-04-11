@@ -109,12 +109,23 @@ h2 {
   transition: all 0.3s ease;
 }
 
-#btn-listar:hover,
-#btn-crear:hover,
-#btn-actualizar:hover,
+#btn-listar:hover {
+  background-color: green;
+  transform: translateY(-2px);
+}
+
+#btn-crear:hover {
+  background-color: blue;
+  transform: translateY(-2px);
+}
+
+#btn-actualizar:hover {
+  background-color: orange;
+  transform: translateY(-2px);
+}
+
 #btn-eliminar:hover {
-  background-color: #1f53c5;
-  color: white;
+  background-color: red;
   transform: translateY(-2px);
 }
 
