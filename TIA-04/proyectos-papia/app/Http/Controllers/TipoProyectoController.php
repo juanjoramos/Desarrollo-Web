@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
+use App\Models\TipoProyecto; 
 use Illuminate\Http\Request;
 
 class TipoProyectoController extends Controller
 {
     public function index()
     {
-        $proyectos = Proyecto::all();
+        $tipos = TipoProyecto::all(); 
         return view('tipoproyecto.index', compact('tipos'));
     }
 }
