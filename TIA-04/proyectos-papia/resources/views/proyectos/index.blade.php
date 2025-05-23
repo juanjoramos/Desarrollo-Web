@@ -3,27 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <title>Listado de Proyectos</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f6fa;
+            margin: 0;
+            padding: 40px;
+        }
+
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+        }
+
+        .link-crear {
+            display: inline-block;
+            margin: 20px auto;
+            text-align: center;
+            color: #3498db;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .link-crear:hover {
+            text-decoration: underline;
+        }
+
+        .mensaje {
+            color: green;
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .proyectos-lista {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 0;
+            list-style: none;
+        }
+
+        .proyectos-lista li {
+            background-color: #ffffff;
+            padding: 16px 20px;
+            margin-bottom: 12px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .proyecto-nombre {
+            flex: 1;
+            font-size: 16px;
+            color: #2c3e50;
+        }
+
+        .acciones a,
+        .acciones button {
+            margin-left: 10px;
+            font-size: 14px;
+            text-decoration: none;
+            padding: 6px 10px;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .acciones a {
+            color: white;
+            background-color: #3498db;
+        }
+
+        .acciones a:hover {
+            background-color: #2980b9;
+        }
+
+        .acciones button {
+            background-color: #e74c3c;
+            color: white;
+        }
+
+        .acciones button:hover {
+            background-color: #c0392b;
+        }
+
+        form {
+            display: inline;
+        }
+    </style>
 </head>
 <body>
     <h1>Proyectos PA/PIA</h1>
 
-    <a href="{{ route('proyectos.create') }}">Crear Nuevo Proyecto</a>
+    <div style="text-align: center;">
+        <a class="link-crear" href="{{ route('proyectos.create') }}">Crear Nuevo Proyecto</a>
+    </div>
 
     @if (session('success'))
-        <p style="color:green;">{{ session('success') }}</p>
+        <p class="mensaje">{{ session('success') }}</p>
     @endif
 
-    <ul>
+    <ul class="proyectos-lista">
         @foreach ($proyectos as $proyecto)
             <li>
-                {{ $proyecto->nombre }} ({{ $proyecto->tipo }})
-                <a href="{{ route('proyectos.show', $proyecto) }}">Ver</a>
-                <a href="{{ route('proyectos.edit', $proyecto) }}">Editar</a>
-                <form action="{{ route('proyectos.destroy', $proyecto) }}" method="POST" style="display:inline;">
-                    @csrf
-                    @method('DELETE')
-                    <button type="submit">Eliminar</button>
-                </form>
+                <div class="proyecto-nombre">
+                    {{ $proyecto->nombre }} ({{ $proyecto->tipo }})
+                </div>
+                <div class="acciones">
+                    <a href="{{ route('proyectos.show', $proyecto) }}">Ver</a>
+                    <a href="{{ route('proyectos.edit', $proyecto) }}">Editar</a>
+                    <form action="{{ route('proyectos.destroy', $proyecto) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit">Eliminar</button>
+                    </form>
+                </div>
             </li>
         @endforeach
     </ul>
