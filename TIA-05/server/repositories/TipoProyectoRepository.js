@@ -1,16 +1,21 @@
 const db = require('../config/database');
-const TipoProyecto = require('../models/Tipoproyecto');
+const Estudiante = require('../models/Tipoproyecto');
 
 class TipoProyectoRepository {
   // Obtener todos los tipo_proyectos
   async getAll() {
     const { rows } = await db.query('SELECT * FROM estudiantes');
-    return rows.map(row => new TipoProyecto(
+    return rows.map(row => new Estudiante(
       row.id,
-      row.codigo,
-      row.descripcion,
-      row.abreviatura,
-      row.fecha_registro
+      row.tipo_identificacion,
+      row.identificacion,
+      row.nombres_apellidos,
+      row.fecha_nacimiento,
+      row.genero,
+      row.telefono,
+      row.correo,
+      row.fotografia,
+      row.redes_sociales
     ));
   }
 
@@ -19,28 +24,38 @@ class TipoProyectoRepository {
     const { rows } = await db.query('SELECT * FROM estudiantes WHERE id = $1', [id]);
     if (rows.length === 0) return null;
     const row = rows[0];
-    return new TipoProyecto(
+    return new Estudiante(
       row.id,
-      row.codigo,
-      row.descripcion,
-      row.abreviatura,
-      row.fecha_registro
+      row.tipo_identificacion,
+      row.identificacion,
+      row.nombres_apellidos,
+      row.fecha_nacimiento,
+      row.genero,
+      row.telefono,
+      row.correo,
+      row.fotografia,
+      row.redes_sociales
     );
   }
 
   // Crear un nuevo tipo_proyecto
   async create(tipoProyecto) {
     const { rows } = await db.query(
-      'INSERT INTO estudiantes (codigo, descripcion, abreviatura) VALUES ($1, $2, $3) RETURNING *',
+      'INSERT INTO estudiantes (tipo_identificacion, identificacion, nombres_apellidos, fecha_nacimiento, genero, telefono, correo, fotografia, redes_sociales) VALUES ($1, $2, $3) RETURNING *',
       [tipoProyecto.codigo, tipoProyecto.descripcion, tipoProyecto.abreviatura]
     );
     const row = rows[0];
-    return new TipoProyecto(
+    return new Estudiante(
       row.id,
-      row.codigo,
-      row.descripcion,
-      row.abreviatura,
-      row.fecha_registro
+      row.tipo_identificacion,
+      row.identificacion,
+      row.nombres_apellidos,
+      row.fecha_nacimiento,
+      row.genero,
+      row.telefono,
+      row.correo,
+      row.fotografia,
+      row.redes_sociales
     );
   }
 
@@ -52,12 +67,17 @@ class TipoProyectoRepository {
     );
     if (rows.length === 0) return null;
     const row = rows[0];
-    return new TipoProyecto(
+    return new Estudiante(
       row.id,
-      row.codigo,
-      row.descripcion,
-      row.abreviatura,
-      row.fecha_registro
+      row.tipo_identificacion,
+      row.identificacion,
+      row.nombres_apellidos,
+      row.fecha_nacimiento,
+      row.genero,
+      row.telefono,
+      row.correo,
+      row.fotografia,
+      row.redes_sociales
     );
   }
 

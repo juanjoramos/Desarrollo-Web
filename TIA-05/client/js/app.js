@@ -46,19 +46,36 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Crear tipo de proyecto (POST)
-  btnCrear.addEventListener('click', async () => {
-    const formData = new FormData(proyectoForm);
-    const tipoProyecto = {
-      codigo: formData.get('codigo'),
-      descripcion: formData.get('descripcion'),
-      abreviatura: formData.get('abreviatura')
-    };
+// Crear estudiante (POST)
+btnCrear.addEventListener('click', async () => {
+  const formData = new FormData(estudianteForm);
+  const estudiante = {
+    tipo_identificacion: formData.get('tipo_identificacion'),
+    identificacion: formData.get('identificacion'),
+    nombres_apellidos: formData.get('nombres_apellidos'),
+    fecha_nacimiento: formData.get('fecha_nacimiento'),
+    genero: formData.get('genero'),
+    telefono: formData.get('telefono'),
+    correo: formData.get('correo'),
+    fotografia: formData.get('fotografia'),
+    redes_sociales: formData.get('redes_sociales')
+  };
 
-    // Validación de campos vacíos
-    if (!tipoProyecto.codigo || !tipoProyecto.descripcion || !tipoProyecto.abreviatura) {
-      showResponse(400, { error: 'Todos los campos son obligatorios.' });
-      return;
-    }
+  // Validación de campos vacíos
+  if (
+    !estudiante.tipo_identificacion ||
+    !estudiante.identificacion ||
+    !estudiante.nombres_apellidos ||
+    !estudiante.fecha_nacimiento ||
+    !estudiante.genero ||
+    !estudiante.telefono ||
+    !estudiante.correo ||
+    !estudiante.fotografia ||
+    !estudiante.redes_sociales
+  ) {
+    showResponse(400, { error: 'Todos los campos son obligatorios.' });
+    return;
+  }
 
     try {
       responseMessageElement.textContent = '⏳ Cargando...';
