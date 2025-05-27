@@ -81,12 +81,12 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 ## INSTRUCCIONES DE INSTALACIÓN, CONFIGURACIÓN Y ARRANQUE DEL PROYECTO
 Bienvenidos a una experiencia Laravel!
 -  1.- Ubicarse en una carpeta en el disco local 
--  2.- Clonar el proyecto: git clone https://github.com/jaimesoto/clase_aut.git
--  3.- Abrir la carpeta: "cd clase_aut" 
+-  2.- Clonar el proyecto: git clone https://github.com/juanjoramos/Desarrollo-Web.git
+-  3.- Abrir la carpeta: "cd Proyecto Pia" 
 -  4.- Correr "composer update" 
 -  5.- Crear archivo ".env" (lo puede copiar del example) 
 -  6.- Configurar la base de datos en el ".env" 
--  7.- Crear la base de datos en pgAdmin4 "aut" 
+-  7.- Crear la base de datos en pgAdmin4 "proyecto_pia" 
 -  8.- Correr en consola "php artisan migrate"
 -  9.- Correr en consola "php artisan key:generate"
 - 10.- Desde Visual Studio Code: Abrir 2 terminales (una para Artisan y la otra para Node) 
