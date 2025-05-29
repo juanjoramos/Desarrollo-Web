@@ -29,10 +29,10 @@ Este proyecto fue desarrollado por el Equipo F para el curso **ET0179 - Desarrol
 ## 🖼️ Capturas del Sistema
 
 ### 📌 Inicio de sesión
-![Login](capturas/login.png)
+![Login](fotos/login.png)
 
 ### 📌 Panel de administración
-![Dashboard](capturas/dashboard.png)
+![Dashboard](fotos/dashboard.png)
 
 ---
 
@@ -41,10 +41,8 @@ Este proyecto fue desarrollado por el Equipo F para el curso **ET0179 - Desarrol
 ```
 Proyecto_Pia/
 ├── proyecto/               → Código fuente Laravel
-├── documentos/             → Informes, ER, diccionario de datos
-├── manuales/               → Manual del sistema
-├── fotos/                  → Fotos de los integrantes
-├── capturas/               → Pantallazos del sistema
+├── documentos/             → Informes, ER, diccionario de datos, manual del sistema
+├── fotos/                  → Fotos de los integrantes, pantallazos del sistema
 ├── README.md               → Este archivo
 ```
 
