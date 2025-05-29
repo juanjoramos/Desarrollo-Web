@@ -7,21 +7,25 @@
         <form action="{{ route('estudiantes.store') }}" method="POST" class="bg-white p-6 rounded shadow-md max-w-xl">
             @csrf
 
+            <!-- Nombre -->
             <div class="mb-4">
                 <label class="block font-bold">Nombre</label>
                 <input type="text" name="nombre" class="w-full border p-2 rounded" required value="{{ old('nombre') }}">
             </div>
 
+            <!-- Correo -->
             <div class="mb-4">
                 <label class="block font-bold">Correo</label>
                 <input type="email" name="correo" class="w-full border p-2 rounded" required value="{{ old('correo') }}">
             </div>
 
+            <!-- Código -->
             <div class="mb-4">
                 <label class="block font-bold">Código</label>
                 <input type="text" name="codigo" class="w-full border p-2 rounded" required value="{{ old('codigo') }}">
             </div>
 
+            <!-- Institución -->
             <div class="mb-4">
                 <label class="block font-bold">Institución</label>
                 <select name="institucion_id" class="w-full border p-2 rounded" required>

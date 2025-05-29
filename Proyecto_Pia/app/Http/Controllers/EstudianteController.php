@@ -9,7 +9,9 @@ use App\Models\Institucion;
 class EstudianteController extends Controller
 {
     public function index() {
-        return view('estudiantes.index', ['estudiantes' => Estudiante::all()]);
+        return view('estudiantes.index', [
+            'estudiantes' => Estudiante::with('institucion')->get()
+        ]);
     }
 
     public function create() {
@@ -17,31 +19,40 @@ class EstudianteController extends Controller
             'instituciones' => Institucion::all()
         ]);
     }
-
-    public function store(Request $request) {
-        Estudiante::create($request->validate([
-            'nombre' => 'required',
-            'correo' => 'required|email|unique:estudiantes',
-            'codigo' => 'required|unique:estudiantes'
-        ]));
-        return redirect()->route('estudiantes.index');
-    }
-
+    
     public function edit(Estudiante $estudiante) {
         return view('estudiantes.edit', [
             'estudiante' => $estudiante,
             'instituciones' => Institucion::all()
         ]);
+    }    
+    
+    public function store(Request $request) {
+        $request->validate([
+            'nombre' => 'required|string|max:255',
+            'correo' => 'required|email|unique:estudiantes',
+            'codigo' => 'required|string|unique:estudiantes',
+            'institucion_id' => 'required|exists:instituciones,id',
+        ]);
+    
+        Estudiante::create($request->all());
+    
+        return redirect()->route('estudiantes.index')->with('success', 'Estudiante creado exitosamente.');
     }
-
+    
     public function update(Request $request, Estudiante $estudiante) {
-        $estudiante->update($request->validate([
-            'nombre' => 'required',
+        $request->validate([
+            'nombre' => 'required|string|max:255',
             'correo' => 'required|email|unique:estudiantes,correo,' . $estudiante->id,
-            'codigo' => 'required|unique:estudiantes,codigo,' . $estudiante->id
-        ]));
-        return redirect()->route('estudiantes.index');
+            'codigo' => 'required|string|unique:estudiantes,codigo,' . $estudiante->id,
+            'institucion_id' => 'required|exists:instituciones,id',
+        ]);
+    
+        $estudiante->update($request->all());
+    
+        return redirect()->route('estudiantes.index')->with('success', 'Estudiante actualizado exitosamente.');
     }
+    
 
     public function destroy(Estudiante $estudiante) {
         $estudiante->delete();
