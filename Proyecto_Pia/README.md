@@ -17,12 +17,11 @@ Este proyecto fue desarrollado por el Equipo F para el curso **ET0179 - Desarrol
 
 ## 🛠️ Tecnologías Usadas
 
-- Laravel 10
-- Laravel Breeze
-- Spatie Laravel Permission
-- Tailwind CSS
-- PostgreSQL
-- Git y GitHub
+✅ Versión de Laravel: 11
+✅ Base de datos: PostgreSQL
+✅ Autenticación: Laravel Breeze (incluye Tailwind CSS)
+✅ Gestión de seguridad: Spatie Laravel-permission
+✅ Node.js y npm: Para ejecutar Tailwind CSS
 
 ---
 
