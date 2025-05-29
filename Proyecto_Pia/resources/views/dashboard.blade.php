@@ -26,6 +26,26 @@
                             Instituciones
                         </a>
                     </li>
+                    <li>
+                        <a href="{{ route('facultades.index') }}" class="block text-white px-4 py-2 rounded hover:bg-blue-600 transition">
+                            Facultades
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('departamentos.index') }}" class="block text-white px-4 py-2 rounded hover:bg-blue-600 transition">
+                            Departamentos
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('programas.index') }}" class="block text-white px-4 py-2 rounded hover:bg-blue-600 transition">
+                            Programas
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('asignaturas.index') }}" class="block text-white px-4 py-2 rounded hover:bg-blue-600 transition">
+                            Asignaturas
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>

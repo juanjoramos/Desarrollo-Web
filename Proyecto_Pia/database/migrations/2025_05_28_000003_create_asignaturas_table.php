@@ -4,27 +4,28 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
+class CreateAsignaturasTable extends Migration
 {
-    /**
-     * Run the migrations.
-     */
-    public function up(): void
+    public function up()
     {
         Schema::create('asignaturas', function (Blueprint $table) {
-            $table->id();
+            $table->id('asignatura_id');
+            $table->string('nombre');
             $table->string('codigo')->unique();
-            $table->string('descripcion');
             $table->integer('creditos');
+            $table->unsignedBigInteger('programa_id');
+
+            $table->foreign('programa_id')
+                  ->references('programa_id')
+                  ->on('programas')
+                  ->onDelete('cascade');
+
             $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
-    public function down(): void
+    public function down()
     {
         Schema::dropIfExists('asignaturas');
     }
-};
+}

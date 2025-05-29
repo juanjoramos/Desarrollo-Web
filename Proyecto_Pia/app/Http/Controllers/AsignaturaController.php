@@ -3,63 +3,60 @@
 namespace App\Http\Controllers;
 
 use App\Models\Asignatura;
+use App\Models\Programa;
 use Illuminate\Http\Request;
 
 class AsignaturaController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        //
+        $asignaturas = Asignatura::with('programa')->get();
+        return view('asignaturas.index', compact('asignaturas'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        //
+        $programas = Programa::all();
+        return view('asignaturas.create', compact('programas'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nombre' => 'required|string|max:255',
+            'codigo' => 'required|string|max:50|unique:asignaturas,codigo',
+            'creditos' => 'required|integer|min:1',
+            'programa_id' => 'required|exists:programas,programa_id',
+        ]);
+
+        Asignatura::create($request->only('nombre', 'codigo', 'creditos', 'programa_id'));
+
+        return redirect()->route('asignaturas.index')->with('success', 'Asignatura creada exitosamente.');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Asignatura $asignatura)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(Asignatura $asignatura)
     {
-        //
+        $programas = Programa::all();
+        return view('asignaturas.edit', compact('asignatura', 'programas'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, Asignatura $asignatura)
     {
-        //
+        $request->validate([
+            'nombre' => 'required|string|max:255',
+            'codigo' => 'required|string|max:50|unique:asignaturas,codigo,' . $asignatura->asignatura_id . ',asignatura_id',
+            'creditos' => 'required|integer|min:1',
+            'programa_id' => 'required|exists:programas,programa_id',
+        ]);
+
+        $asignatura->update($request->only('nombre', 'codigo', 'creditos', 'programa_id'));
+
+        return redirect()->route('asignaturas.index')->with('success', 'Asignatura actualizada exitosamente.');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(Asignatura $asignatura)
     {
-        //
+        $asignatura->delete();
+        return redirect()->route('asignaturas.index')->with('success', 'Asignatura eliminada exitosamente.');
     }
 }

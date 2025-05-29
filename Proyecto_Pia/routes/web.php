@@ -5,6 +5,9 @@ use App\Http\Controllers\AsignaturaController;
 use App\Http\Controllers\ProyectoController;
 use App\Http\Controllers\InstitucionController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\FacultadController;
+use App\Http\Controllers\DepartamentoController;
+use App\Http\Controllers\ProgramaController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -21,15 +24,15 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     /**
-     * Rutas de CRUD
      * Todas las opciones del Menú
      */
     Route::resource('tipo-proyectos', TipoProyectoController::class);
     Route::resource('asignaturas', AsignaturaController::class);
     Route::resource('proyectos', ProyectoController::class);
-    Route::resource('instituciones', InstitucionController::class)->parameters([
-        'instituciones' => 'institucion',
-    ]);
+    Route::resource('instituciones', InstitucionController::class);
+    Route::resource('facultades', FacultadController::class);
+    Route::resource('departamentos', DepartamentoController::class);
+    Route::resource('programas', ProgramaController::class);
 });
 
 require __DIR__.'/auth.php';
