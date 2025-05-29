@@ -6,12 +6,12 @@ Este proyecto fue desarrollado por el Equipo F para el curso **ET0179 - Desarrol
 
 ## 👨‍👩‍👧‍👦 Integrantes del Equipo F
 
-| Nombre                          | Foto                      |
-|-------------------------------|---------------------------|
-| Ximena Zamudio Mesa           | ![](fotos/ximena.jpg)     |
-| John Jairo Cañaveral Gutiérrez| ![](fotos/john.jpg)       |
-| Juan José Ramos Agudelo       | ![](fotos/juan.jpg)       |
-| Estiven Toro Henao            | ![](fotos/estiven.jpg)    |
+| Nombre                         | Foto                                                        |
+|-------------------------------|-------------------------------------------------------------|
+| Ximena Zamudio Mesa            | <img src="fotos/ximena.jpg" alt="Ximena Zamudio Mesa" width="150">          |
+| John Jairo Cañaveral Gutiérrez| <img src="fotos/john.jpg" alt="John Jairo Cañaveral Gutiérrez" width="150"> |
+| Juan José Ramos Agudelo        | <img src="fotos/juan.jpg" alt="Juan José Ramos Agudelo" width="150">        |
+| Estiven Toro                   | <img src="fotos/estiven.jpg" alt="Estiven Toro" width="150">                |
 
 ---
 
