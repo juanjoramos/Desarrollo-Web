@@ -1,11 +1,89 @@
-## Prof. Jaime E Soto U
-## I. U. Pascual Bravo
-## Facultad de Ingeniería
+# 📘 Proyecto Final PIA - Sistema de Administración de Proyectos
 
-Proyecto Integrador de Aula de los cursos del Programa de Ingeniería de Software:
-- Base de Datos I
-- Desarrollo Web con nuevas tecnologías
+Este proyecto fue desarrollado por el Equipo F para el curso **ET0179 - Desarrollo Web con Nuevas Tecnologías** de la institución **Pascual Bravo**. El objetivo principal es gestionar los proyectos de aula a través de un sistema web, implementando herramientas modernas como Laravel, Breeze, Tailwind y Spatie.
 
+---
+
+## 👨‍👩‍👧‍👦 Integrantes del Equipo F
+
+| Nombre                          | Foto                      |
+|-------------------------------|---------------------------|
+| Ximena Zamudio Mesa           | ![](fotos/ximena.jpg)     |
+| John Jairo Cañaveral Gutiérrez| ![](fotos/john.jpg)       |
+| Juan José Ramos Agudelo       | ![](fotos/juan.jpg)       |
+| Estiven Toro Henao            | ![](fotos/estiven.jpg)    |
+
+---
+
+## 🛠️ Tecnologías Usadas
+
+- Laravel 10
+- Laravel Breeze
+- Spatie Laravel Permission
+- Tailwind CSS
+- PostgreSQL
+- Git y GitHub
+
+---
+
+## 🖼️ Capturas del Sistema
+
+### 📌 Inicio de sesión
+![Login](capturas/login.png)
+
+### 📌 Panel de administración
+![Dashboard](capturas/dashboard.png)
+
+---
+
+## 📁 Estructura del Proyecto
+
+```
+Proyecto_Pia/
+├── proyecto/               → Código fuente Laravel
+├── documentos/             → Informes, ER, diccionario de datos
+├── manuales/               → Manual del sistema
+├── fotos/                  → Fotos de los integrantes
+├── capturas/               → Pantallazos del sistema
+├── README.md               → Este archivo
+```
+
+---
+
+## 👤 Responsabilidades por Integrante
+
+- **Estiven Toro**: Migraciones, controladores, rutas, lógica CRUD.
+- **Ximena Zamudio**: Manual del sistema, presentación en video.
+- **John Jairo Cañaveral**: Desarrollo de vistas Blade, diseño de interfaz.
+- **Juan José Ramos**: Autenticación, roles y permisos con Spatie.
+
+---
+
+## 📎 Video de Presentación
+
+📺 Enlace al video: [Ver en YouTube](https://enlace-a-video.com)
+
+---
+
+## 🧭 Instrucciones de Instalación, Configuración y Arranque del Proyecto
+
+Bienvenidos a una experiencia Laravel!
+
+1. Ubicarse en una carpeta en el disco local.
+2. Clonar el proyecto: `git clone https://github.com/juanjoramos/Desarrollo-Web.git`
+3. Abrir la carpeta: `cd Proyecto_Pia`
+4. Ejecutar: `composer update`
+5. Crear el archivo `.env` (puedes copiarlo desde `.env.example`).
+6. Configurar la base de datos en el `.env` (nombre: `proyecto_pia`).
+7. Crear la base de datos en pgAdmin4 con el nombre `proyecto_pia`.
+8. Ejecutar migraciones: `php artisan migrate`
+9. Generar clave de la app: `php artisan key:generate`
+10. Abrir 2 terminales en VS Code:
+    - Terminal 1: `php artisan serve` → http://localhost:8000
+    - Terminal 2: `npm install` y luego `npm run dev`
+11. Acceder a la URL [http://localhost:8000](http://localhost:8000)
+
+---
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
@@ -73,23 +151,3 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-
-
-<br>
-<br>
-
-## INSTRUCCIONES DE INSTALACIÓN, CONFIGURACIÓN Y ARRANQUE DEL PROYECTO
-Bienvenidos a una experiencia Laravel!
--  1.- Ubicarse en una carpeta en el disco local 
--  2.- Clonar el proyecto: git clone https://github.com/juanjoramos/Desarrollo-Web.git
--  3.- Abrir la carpeta: "cd Proyecto Pia" 
--  4.- Correr "composer update" 
--  5.- Crear archivo ".env" (lo puede copiar del example) 
--  6.- Configurar la base de datos en el ".env" 
--  7.- Crear la base de datos en pgAdmin4 "proyecto_pia" 
--  8.- Correr en consola "php artisan migrate"
--  9.- Correr en consola "php artisan key:generate"
-- 10.- Desde Visual Studio Code: Abrir 2 terminales (una para Artisan y la otra para Node) 
-- 11.- Arrancar Artisan en un terminal: "php artisan serve" -> http://localhost:8000 
-- 12.- Arrancar Node en el otro terminal: "npm install" (primero) "npm run dev" (después) 
-- 13.- Ir al explorador y acceder a la URL http://localhost:8000
