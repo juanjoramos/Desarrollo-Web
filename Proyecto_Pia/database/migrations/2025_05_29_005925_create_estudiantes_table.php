@@ -10,7 +10,8 @@ return new class extends Migration {
             $table->id();
             $table->string('nombre');
             $table->string('correo')->unique();
-            $table->string('codigo')->unique(); // código institucional
+            $table->string('codigo')->unique();
+            $table->foreignId('institucion_id')->constrained('instituciones')->onDelete('cascade');
             $table->timestamps();
         });
     }
