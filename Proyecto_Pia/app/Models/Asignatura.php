@@ -24,6 +24,14 @@ class Asignatura extends Model
         return $this->belongsTo(Programa::class, 'programa_id');
     }
 
+    public function proyectos()
+    {
+        return $this->belongsToMany(Proyecto::class, 'proyecto_asignaturas')
+                    ->withPivot('grupo', 'docente_id')
+                    ->withTimestamps();
+    }
+
+
     public function getRouteKeyName()
     {
         return 'asignatura_id';

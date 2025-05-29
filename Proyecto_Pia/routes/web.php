@@ -8,6 +8,13 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\FacultadController;
 use App\Http\Controllers\DepartamentoController;
 use App\Http\Controllers\ProgramaController;
+use App\Http\Controllers\DocenteController;
+use App\Http\Controllers\EstudianteController;
+use App\Http\Controllers\EvaluadorController;
+use App\Http\Controllers\EvaluacionController;
+use App\Http\Controllers\ProyectoAsignaturaController;
+use App\Http\Controllers\ProyectoEvaluacionController;
+
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -33,6 +40,12 @@ Route::middleware('auth')->group(function () {
     Route::resource('facultades', FacultadController::class);
     Route::resource('departamentos', DepartamentoController::class);
     Route::resource('programas', ProgramaController::class);
+    Route::resource('docentes', DocenteController::class);
+    Route::resource('estudiantes', EstudianteController::class);
+    Route::resource('evaluadores', EvaluadorController::class);
+    Route::resource('evaluaciones', EvaluacionController::class);
+    Route::resource('proyecto_asignaturas', ProyectoAsignaturaController::class);
+    Route::resource('proyecto_evaluaciones', ProyectoEvaluacionController::class);
 });
 
 require __DIR__.'/auth.php';

@@ -21,7 +21,6 @@ class Departamento extends Model
         'facultad_id',
     ];
 
-    // Relación con Facultad
     public function facultad()
     {
         return $this->belongsTo(Facultad::class, 'facultad_id');

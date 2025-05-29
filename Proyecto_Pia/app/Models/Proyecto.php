@@ -17,12 +17,24 @@ class Proyecto extends Model {
         'id_tipo_proyecto'
     ];
 
-    // Definir la relación con TipoProyecto
     public function tipoProyecto() {
         return $this->belongsTo(TipoProyecto::class, 'id_tipo_proyecto');
     }
 
-    // Para manejar fechas automáticamente con mutadores
+    public function asignaturas()
+    {
+        return $this->belongsToMany(Asignatura::class, 'proyecto_asignaturas')
+                    ->withPivot('grupo', 'docente_id')
+                    ->withTimestamps();
+    }
+
+    public function evaluaciones()
+    {
+        return $this->belongsToMany(Evaluacion::class, 'proyecto_evaluaciones')
+                    ->withPivot('evaluador_id', 'resultados_criterios')
+                    ->withTimestamps();
+    }
+
     protected $casts = [
         'fecha_inicio' => 'datetime',
         'fecha_fin' => 'datetime',

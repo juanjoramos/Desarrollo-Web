@@ -12,23 +12,8 @@
 
                 <ul class="space-y-3 text-lg">
                     <li>
-                        <a href="{{ route('tipo-proyectos.index') }}" class="block text-white px-4 py-2 rounded hover:bg-blue-600 transition">
-                            Tipos de Proyecto
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ route('proyectos.index') }}" class="block text-white px-4 py-2 rounded hover:bg-blue-600 transition">
-                            Proyectos
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ route('instituciones.index') }}" class="block text-white px-4 py-2 rounded hover:bg-blue-600 transition">
-                            Instituciones
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ route('facultades.index') }}" class="block text-white px-4 py-2 rounded hover:bg-blue-600 transition">
-                            Facultades
+                        <a href="{{ route('asignaturas.index') }}" class="block text-white px-4 py-2 rounded hover:bg-blue-600 transition">
+                            Asignaturas
                         </a>
                     </li>
                     <li>
@@ -37,15 +22,60 @@
                         </a>
                     </li>
                     <li>
+                        <a href="{{ route('docentes.index') }}" class="block text-white px-4 py-2 rounded hover:bg-blue-600 transition">
+                            Docentes
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('estudiantes.index') }}" class="block text-white px-4 py-2 rounded hover:bg-blue-600 transition">
+                            Estudiantes
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('evaluaciones.index') }}" class="block text-white px-4 py-2 rounded hover:bg-blue-600 transition">
+                            Evaluaciones
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('evaluadores.index') }}" class="block text-white px-4 py-2 rounded hover:bg-blue-600 transition">
+                            Evaluadores
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('facultades.index') }}" class="block text-white px-4 py-2 rounded hover:bg-blue-600 transition">
+                            Facultades
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('instituciones.index') }}" class="block text-white px-4 py-2 rounded hover:bg-blue-600 transition">
+                            Instituciones
+                        </a>
+                    </li>
+                    <li>
                         <a href="{{ route('programas.index') }}" class="block text-white px-4 py-2 rounded hover:bg-blue-600 transition">
                             Programas
                         </a>
                     </li>
                     <li>
-                        <a href="{{ route('asignaturas.index') }}" class="block text-white px-4 py-2 rounded hover:bg-blue-600 transition">
-                            Asignaturas
+                        <a href="{{ route('proyectos.index') }}" class="block text-white px-4 py-2 rounded hover:bg-blue-600 transition">
+                            Proyectos
                         </a>
                     </li>
+                    <li>
+                        <a href="{{ route('proyecto_asignaturas.index') }}" class="block text-white px-4 py-2 rounded hover:bg-blue-600 transition">
+                            Proyecto Asignaturas
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('proyecto_evaluaciones.index') }}" class="block text-white px-4 py-2 rounded hover:bg-blue-600 transition">
+                            Proyecto Evaluaciones
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('tipo-proyectos.index') }}" class="block text-white px-4 py-2 rounded hover:bg-blue-600 transition">
+                            Tipos de Proyecto
+                        </a>
+                    </li>                                                        
                 </ul>
             </div>
         </div>
