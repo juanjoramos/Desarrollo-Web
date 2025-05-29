@@ -43,8 +43,9 @@ Este proyecto fue desarrollado por el Equipo F para el curso **ET0179 - Desarrol
 ```
 Proyecto_Pia/
 ├── proyecto/               → Código fuente Laravel
-├── documentos/             → Informes, ER, diccionario de datos, manual del sistema
+├── documentos/             → Informes, ER, diccionario de datos
 ├── fotos/                  → Fotos de los integrantes, pantallazos del sistema
+├── manuales/               → Manual del sistema
 ├── README.md               → Este archivo
 ```
 
